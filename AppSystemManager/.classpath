@@ -12,6 +12,7 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.jstl_1.2.1">
 		<attributes>
@@ -19,30 +20,30 @@
 			<attribute name="owner.project.facets" value="jst.web.jstl"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/aspectjweaver-1.6.9.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/commons-dbcp.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/commons-fileupload-1.2.2.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/commons-pool-1.6.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/fastjson-1.2.13.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/jstl.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/mybatis-3.2.2.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/mybatis-spring-1.2.0.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/mysql-connector-java-5.1.0-bin.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-aop-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-aspects-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-beans-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-context-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-context-support-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-core-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-expression-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-jdbc-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-tx-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-web-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/spring-webmvc-3.2.13.RELEASE.jar"/>
-	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-é¶æ®µé¡¹ç®/æé«ç»/é¡¹ç®æ¡ä¾ï¼APPä¿¡æ¯ç®¡çå¹³å°/å¼åç´ ææä¾/å·¥ç¨æéå¨é¨jaræä»¶/standard.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/aspectjweaver-1.6.9.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/fastjson-1.2.13.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/jstl.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/mybatis-3.2.2.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/mybatis-spring-1.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/mysql-connector-java-5.1.0-bin.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-aop-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-aspects-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-beans-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-context-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-context-support-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-core-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-expression-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-jdbc-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-tx-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-web-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/spring-webmvc-3.2.13.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/3-2-Spring/SpringMVC/3-4-阶段项目/拔高组/项目案例：APP信息管理平台/开发素材提供/工程所需全部jar文件/standard.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
