@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx.xsd
+      	 http://www.springframework.org/schema/aop 
+      	 http://www.springframework.org/schema/aop/spring-aop.xsd">
+	  <bean id="properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       		<property name="Location"><!-- 指定Location为连接属性 -->
+       			<value>classpath:data.properties</value><!-- 连接数据库的配置文件 -->
+       		</property>
+       </bean>
+       <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+       		<property name="driverClassName" value="${driver}"></property>
+       		<property name="url" value="${url}"></property>
+       		<property name="username" value="${username}"></property>
+       		<property name="password" value="${userpassword}"></property>
+       </bean>
+       
+        <!-- 创建SqlSessionFactory工厂 --> 
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+       		<property name="configLocation">
+       			<value>classpath:Mybatis.xml</value>
+       		</property>
+       		<property name="mapperLocations">
+       			<list>
+       				<value>classpath:cn/app/Dao/BackendUserMapper.xml</value>
+       			</list>
+       		</property>
+       		<property name="dataSource" ref="dataSource"></property>
+       </bean>
+       
+       
+       <!-- 配置事务管理器 -->
+       <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       		<property name="dataSource" ref="dataSource"></property>
+       </bean>
+       <!-- 配置事务属性 -->
+       <tx:advice id="txadvice" transaction-manager="txManager">
+   		<tx:attributes>
+   			<tx:method name="find*"/><!-- 类中所有增加的方法 可以精确到某个方法（需要把方法名写完整）-->
+   		</tx:attributes>
+   </tx:advice>
+   <!-- 配置事务切面 -->
+   <aop:config>
+   		<aop:pointcut expression="execution(* cn.app.Service.*.find*(..))" id="selectUser"/>
+   		<aop:advisor advice-ref="txadvice" pointcut-ref="selectUser"/>
+   </aop:config>
+   
+   
+       <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+       		<property name="basePackage" value="cn.app.Dao"></property>
+       </bean>
+       <context:component-scan base-package="cn.app.Service"></context:component-scan>
+</beans>
