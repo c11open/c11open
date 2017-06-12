@@ -12,11 +12,11 @@
            http://www.springframework.org/schema/tx/spring-tx.xsd
       	 http://www.springframework.org/schema/aop 
       	 http://www.springframework.org/schema/aop/spring-aop.xsd">
-	  <bean id="properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		  <bean id="properties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
        		<property name="Location"><!-- 指定Location为连接属性 -->
        			<value>classpath:data.properties</value><!-- 连接数据库的配置文件 -->
        		</property>
-       </bean>
+       	   </bean>
        <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
        		<property name="driverClassName" value="${driver}"></property>
        		<property name="url" value="${url}"></property>
@@ -31,32 +31,35 @@
        		</property>
        		<property name="mapperLocations">
        			<list>
-       				<value>classpath:cn/app/Dao/BackendUserMapper.xml</value>
+       				<value>classpath:cn/app/dao/BackendUserMapper.xml</value>
        			</list>
        		</property>
        		<property name="dataSource" ref="dataSource"></property>
        </bean>
        
        
-       <!-- 配置事务管理器 -->
+      <!--  配置事务管理器 -->
        <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
        		<property name="dataSource" ref="dataSource"></property>
        </bean>
        <!-- 配置事务属性 -->
-       <tx:advice id="txadvice" transaction-manager="txManager">
+   	 <tx:advice id="txadvice" transaction-manager="txManager">
    		<tx:attributes>
-   			<tx:method name="find*"/><!-- 类中所有增加的方法 可以精确到某个方法（需要把方法名写完整）-->
+   			<tx:method name="find*"/><!-- 类中所有增加的方法 可以精确到某个方法（需要把方法名写完整） -->
    		</tx:attributes>
-   </tx:advice>
-   <!-- 配置事务切面 -->
-   <aop:config>
-   		<aop:pointcut expression="execution(* cn.app.Service.*.find*(..))" id="selectUser"/>
+  	 </tx:advice>
+  <!--  配置事务切面-->   
+  <aop:config>
+   		<aop:pointcut expression="execution(* cn.app.service.*.find*(..))" id="selectUser"/>
    		<aop:advisor advice-ref="txadvice" pointcut-ref="selectUser"/>
    </aop:config>
    
    
        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-       		<property name="basePackage" value="cn.app.Dao"></property>
+       		<property name="basePackage" value="cn.app.dao"></property>
        </bean>
-       <context:component-scan base-package="cn.app.Service"></context:component-scan>
+       <context:component-scan base-package="cn.app.service"></context:component-scan>
 </beans>
+
+
+

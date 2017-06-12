@@ -1,4 +1,4 @@
-package cn.app.Dao;
+package cn.app.dao;
 
 public interface PromotionMapper {
 

@@ -1,1 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.app.dao.BackendUserMapper">
+	<select id="getuserCodeAnduserPwd" resultType="BackendUser" parameterType="BackendUser">
+		SELECT COUNT(1) FROM backend_user
+		<where>
+			<if test="userCode!=null and userCode!=''"> and userCode=#{userCode}</if>
+			<if test="userPassword!=null and userPassword!=''"> and userPassword=#{userPassword}</if>
+		</where>
+	</select>
+</mapper>
