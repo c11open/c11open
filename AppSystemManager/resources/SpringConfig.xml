@@ -34,20 +34,20 @@
        
        
       <!--  配置事务管理器 -->
-       <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<!--        <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
        		<property name="dataSource" ref="dataSource"></property>
        </bean>
-       <!-- 配置事务属性 -->
+       配置事务属性
    	 <tx:advice id="txadvice" transaction-manager="txManager">
    		<tx:attributes>
-   			<tx:method name="find*"/><!-- 类中所有增加的方法 可以精确到某个方法（需要把方法名写完整） -->
+   			<tx:method name="find*"/>类中所有增加的方法 可以精确到某个方法（需要把方法名写完整）
    		</tx:attributes>
   	 </tx:advice>
-  <!--  配置事务切面-->   
+   配置事务切面   
   <aop:config>
    		<aop:pointcut expression="execution(* cn.app.service.*.find*(..))" id="selectUser"/>
    		<aop:advisor advice-ref="txadvice" pointcut-ref="selectUser"/>
-   </aop:config>
+   </aop:config> -->
    
    
        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
