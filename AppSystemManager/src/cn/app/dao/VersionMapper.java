@@ -1,5 +1,12 @@
 package cn.app.dao;
 
-public interface VersionMapper {
+import cn.app.pojo.Version;
 
+public interface VersionMapper {
+	
+	public int addVersion(Version version);
+	
+	public int aa();
+	
+	public int deleteVersion(int id);
 }

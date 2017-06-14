@@ -84,7 +84,7 @@
         </div>
         <div class="x_content" style="display: block;">
          <br>
-        <form class="form-horizontal form-label-left" action="addversionsave" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal form-label-left" action="${pageContext.request.contextPath }/dev/addversionsave.html"  method="post" enctype="multipart/form-data">
            <input type="hidden" name="appId" name="appId" value="${appVersion.appId}">
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">版本号 <span class="required">*</span>
@@ -141,4 +141,4 @@
   </div>
 </div>
 <%@include file="common/footer.jsp"%>
-<script src="${pageContext.request.contextPath }/statics/localjs/appversionadd.js"></script>
+ <script src="${pageContext.request.contextPath }/statics/localjs/appversionadd.js"></script> 
