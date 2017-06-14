@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.app.dao.VersionMapper">
+	<select id="getSelectVersionInfo" resultType="Version">
+		SELECT versionNo,versionSize,versionInfo 
+		FROM app_version
+		INNER JOIN app_info ON app_version.appId=app_info.id
+		<where>
+			<if test="aid!=0"> and app_info.id=#{aid}</if>
+			<if test="vid!=0"> and versionId=#{vid}</if>
+		</where>
+	</select>
+</mapper>
