@@ -14,7 +14,7 @@
   
   <body>
     <h1>APP信息管理平台</h1>
-    <a href="manager/login.html">后台管理系统入口</a>
+    <a href="backendmanager/backendlogin.html">后台管理系统入口</a>
     <a href="dev/devlogin.html">开发者平台入口</a>
   </body>
 </html>

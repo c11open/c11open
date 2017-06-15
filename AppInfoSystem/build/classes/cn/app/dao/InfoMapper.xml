@@ -1,59 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.app.dao.InfoMapper">
-	<select id="getCountInfo" resultType="int">
-		SELECT COUNT(1) FROM app_info WHERE APKName=#{APKName}
+	<!-- App审核 -->
+	<select id="getSelectAppCheck" resultType="Info">
+		SELECT app_info.id,softwareName,APKName,supportROM,interfaceLanguage,softwareSize,
+		downloads,valueName as flatformName,app1.categoryName as categoryLevel1Name,app2.categoryName as categoryLevel2Name,
+		app3.categoryName as categoryLevel3Name,valueName as statusName,appInfo
+		FROM app_info
+		INNER JOIN data_dictionary ON app_info.flatformId=data_dictionary.valueId AND typeCode='APP_STATUS'
+		INNER JOIN app_category AS app1 ON app1.id=app_info.categoryLevel1
+		INNER JOIN app_category AS app2 ON app2.id=app_info.categoryLevel2	
+		INNER JOIN app_category AS app3 ON app3.id=app_info.categoryLevel3
+		<where>
+			<if test="aid!=0"> and app_info.id=#{aid}</if>
+			<if test="vid!=0"> and versionId=#{vid}</if>
+		</where>
 	</select>
-	<insert id="addInfo" parameterType="Info">	
-	INSERT INTO appinfodb.app_info 
-	(softwareName, 
-	APKName, 
-	supportROM, 
-	interfaceLanguage, 
-	softwareSize, 
-	updateDate, 
-	devId, 
-	appInfo, 
-	STATUS, 
-	onSaleDate, 
-	offSaleDate, 
-	flatformId, 
-	categoryLevel3, 
-	downloads, 
-	createdBy, 
-	creationDate, 
-	modifyBy, 
-	modifyDate, 
-	categoryLevel1, 
-	categoryLevel2, 
-	logoPicPath, 
-	logoLocPath, 
-	versionId
-	)
-	VALUES
-	(#{softwareName}, 
-	#{APKName}, 
-	#{supportROM}, 
-	#{interfaceLanguage}, 
-	#{softwareSize}, 
-	#{updateDate}, 
-	#{devId}, 
-	#{appInfo}, 
-	#{status}, 
-	#{onSaleDate}, 
-	#{offSaleDate}, 
-	#{flatformId}, 
-	#{categoryLevel3}, 
-	#{downloads}, 
-	#{createdBy}, 
-	#{creationDate}, 
-	#{modifyBy}, 
-	#{modifyDate}, 
-	#{categoryLevel1}, 
-	#{categoryLevel2}, 
-	#{logoPicPath}, 
-	#{logoLocPath}, 
-	#{versionId}
-	);
-	</insert>
+	<!-- 修改状态 -->
+	<update id="getUpdataStatus" parameterType="int">
+		update app_info
+		<set>status=#{status}</set>
+		<where>
+			<if test="id!=0">id=#{id}</if>
+		</where>
+	</update>
 </mapper>

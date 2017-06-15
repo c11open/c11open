@@ -13,6 +13,14 @@ public class BackendUser {
 	private Integer modifyBy;
 	private Date modifyDate;
 	private String userPassword;
+	private String userTypeName;
+	
+	public String getUserTypeName() {
+		return userTypeName;
+	}
+	public void setUserTypeName(String userTypeName) {
+		this.userTypeName = userTypeName;
+	}
 	public Integer getId() {
 		return id;
 	}

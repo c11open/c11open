@@ -14,8 +14,9 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="x_content">
-				<form method="post" action="list">
-					<input type="hidden" name="pageIndex" value="1" />
+				<form method="post" action="${pageContext.request.contextPath }/app/list.html">
+					<input type="hidden" name="pageIndex" value="1" /><!-- 隐藏域，这里是当前页 -->
+					<input type="hidden" id="path" value="${pageContext.request.contextPath}" /><!-- 隐藏域 请求根路径-->
 			    <ul>
 					<li>
 						<div class="form-group">

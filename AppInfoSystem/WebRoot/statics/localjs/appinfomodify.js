@@ -106,7 +106,7 @@ $(function(){
 	});
 	
 	$("#back").on("click",function(){
-		window.location.href = "c";
+		window.location.href = "list";
 	});
 	
 	

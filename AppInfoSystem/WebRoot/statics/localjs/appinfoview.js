@@ -1,5 +1,6 @@
 $("#back").on("click",function(){
-	window.location.href = "d";
+	window.location.href = "../list";
 });
+	
 	
 	

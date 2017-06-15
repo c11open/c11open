@@ -1,11 +1,10 @@
 package cn.app.service;
 
+import java.util.List;
+
 import cn.app.pojo.Version;
 
 public interface VersionService {
-	public boolean addVersion(Version version);
-	
-	public int aa();
-	
-	public int deleteVersion(int id);
+	//版本信息
+	public List<Version> findSelectVersionInfo(int aid,int vid);
 }

@@ -19,9 +19,9 @@
          </div>
        </div> -->
            <div class="clearfix"></div>
-        <form class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/dev/appinfoaddsave.html" method="post" enctype="multipart/form-data" >
+        <form class="form-horizontal form-label-left" action="appinfoaddsave" method="post" enctype="multipart/form-data">
           <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name" >软件名称 <span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">软件名称 <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input id="softwareName" class="form-control col-md-7 col-xs-12" 

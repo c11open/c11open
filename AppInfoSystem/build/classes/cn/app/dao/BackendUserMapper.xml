@@ -2,10 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.app.dao.BackendUserMapper">
 	<select id="getuserCodeAnduserPwd" resultType="BackendUser" parameterType="BackendUser">
-		SELECT COUNT(1) FROM backend_user
+		SELECT userCode,userName,valueName AS userTypeName,userPassword 
+		FROM backend_user
+		INNER JOIN data_dictionary ON data_dictionary.valueId=backend_user.userType
 		<where>
 			<if test="userCode!=null and userCode!=''"> and userCode=#{userCode}</if>
 			<if test="userPassword!=null and userPassword!=''"> and userPassword=#{userPassword}</if>
+		</where>
+		and typeName='用户类型'
+	</select>
+	<!-- 根据条件查询 -->
+	<select id="getSelectResult" resultType="Info">
+		SELECT app_info.id,softwareName,APKName,softwareSize,dic2.valueName AS flatformName,
+		app1.categoryName as categoryLevel1Name,app2.categoryName as categoryLevel2Name,
+		app3.categoryName as categoryLevel3Name,dic1.valueName AS statusName,downloads,versionNo,
+		app_info.id,versionId,status
+		FROM app_info
+		INNER JOIN app_version ON app_info.versionId=app_version.id
+		INNER JOIN app_category AS app1 ON app1.id=app_info.categoryLevel1
+		INNER JOIN app_category AS app2 ON app2.id=app_info.categoryLevel2
+		INNER JOIN app_category AS app3 ON app3.id=app_info.categoryLevel3
+		INNER JOIN data_dictionary AS dic1 ON app_info.status=dic1.valueId AND dic1.typeCode='APP_STATUS'
+		INNER JOIN data_dictionary AS dic2 ON app_info.flatformId=dic2.valueId AND dic2.typeCode='APP_FLATFORM'
+		<where>
+			<if test="softwareName!=null and softwareName!=''"> and softwareName LIKE concat('%',#{softwareName},'%')</if>
+			<if test="flatformId != 0"> and flatformId=#{flatformId}</if>
+			<if test="categoryLevel1!=0"> and categoryLevel1=#{categoryLevel1}</if>
+			<if test="categoryLevel2!=0"> and categoryLevel2=#{categoryLevel2}</if>
+			<if test="categoryLevel3!=0"> and categoryLevel3=#{categoryLevel3}</if>
+		</where>
+		limit #{pageIndex},#{pageSize}
+	</select>
+	<!-- 查询 总记录条数 -->
+	<select id="getSelectCount" resultType="int">
+		SELECT COUNT(1)
+		FROM app_info
+		INNER JOIN app_category AS app1 ON app1.id=app_info.categoryLevel1
+		INNER JOIN app_category AS app2 ON app2.id=app_info.categoryLevel2
+		INNER JOIN app_category AS app3 ON app3.id=app_info.categoryLevel3
+		INNER JOIN data_dictionary AS dic1 ON app_info.status=dic1.valueId AND dic1.typeCode='APP_STATUS'
+		INNER JOIN data_dictionary AS dic2 ON app_info.flatformId=dic2.valueId AND dic2.typeCode='APP_FLATFORM'
+		INNER JOIN app_version ON app_info.versionId=app_version.id
+		<where>
+			<if test="softwareName!=null and softwareName!=''"> and softwareName LIKE concat('%',#{softwareName},'%')</if>
+			<if test="flatformId != 0"> and flatformId=#{flatformId}</if>
+			<if test="categoryLevel1!=0"> and categoryLevel1=#{categoryLevel1}</if>
+			<if test="categoryLevel2!=0"> and categoryLevel2=#{categoryLevel2}</if>
+			<if test="categoryLevel3!=0"> and categoryLevel3=#{categoryLevel3}</if>
 		</where>
 	</select>
 </mapper>

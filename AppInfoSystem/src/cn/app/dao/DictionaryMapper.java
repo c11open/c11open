@@ -1,5 +1,13 @@
 package cn.app.dao;
 
-public interface DictionaryMapper {
 
+import java.util.List;
+
+import cn.app.pojo.Dictionary;
+
+
+public interface DictionaryMapper {
+	
+	//查询所属平台
+	public List<Dictionary> getSelectPingTai();
 }
