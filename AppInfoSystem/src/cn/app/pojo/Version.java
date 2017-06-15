@@ -17,6 +17,22 @@ public class Version {
 	private Date modifyDate;
 	private String apkLocPath;
 	private String apkFileName;
+	
+	private String appName;
+	private String publishStatusName;
+	
+	public String getAppName() {
+		return appName;
+	}
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+	public String getPublishStatusName() {
+		return publishStatusName;
+	}
+	public void setPublishStatusName(String publishStatusName) {
+		this.publishStatusName = publishStatusName;
+	}
 	public Integer getId() {
 		return id;
 	}
