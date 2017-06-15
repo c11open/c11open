@@ -12,4 +12,6 @@ public interface InfoService {
 
 	//App审核
 	public List<Info> findSelectAppCheck(int aid,int vid);
+	//App审核通过、未通过审核
+	public int findUpdataStatus(int status,int id);
 }

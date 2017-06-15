@@ -3,7 +3,7 @@
 <mapper namespace="cn.app.dao.InfoMapper">
 	<!-- App审核 -->
 	<select id="getSelectAppCheck" resultType="Info">
-		SELECT app_info.id AS appinfoId,softwareName,APKName,supportROM,interfaceLanguage,softwareSize,
+		SELECT app_info.id,softwareName,APKName,supportROM,interfaceLanguage,softwareSize,
 		downloads,valueName as flatformName,app1.categoryName as categoryLevel1Name,app2.categoryName as categoryLevel2Name,
 		app3.categoryName as categoryLevel3Name,valueName as statusName,appInfo
 		FROM app_info
@@ -16,4 +16,12 @@
 			<if test="vid!=0"> and versionId=#{vid}</if>
 		</where>
 	</select>
+	<!-- 修改状态 -->
+	<update id="getUpdataStatus" parameterType="int">
+		update app_info
+		<set>status=#{status}</set>
+		<where>
+			<if test="id!=0">id=#{id}</if>
+		</where>
+	</update>
 </mapper>

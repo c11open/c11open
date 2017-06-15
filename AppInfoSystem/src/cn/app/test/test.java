@@ -51,6 +51,8 @@ public class test {
 		log.info("PL:"+infolist.size());
 		List<Version> versionlist=versionSer.findSelectVersionInfo(51, 37);
 		log.info("P*****L:"+versionlist.size());
+		int row=infoser.findUpdataStatus(2, 48);
+		log.info("PL@@@@@@@@"+row);
 	}
 
 }

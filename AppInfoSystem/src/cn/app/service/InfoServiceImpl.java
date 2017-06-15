@@ -19,5 +19,11 @@ public class InfoServiceImpl implements InfoService {
 	public List<Info> findSelectAppCheck(int aid,int vid) {
 		return infoMapper.getSelectAppCheck(aid, vid);
 	}
+	//App审核通过、未通过审核
+	@Override
+	public int findUpdataStatus(int status, int id) {
+		
+		return infoMapper.getUpdataStatus(status, id);
+	}
 	
 }

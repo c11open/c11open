@@ -13,7 +13,7 @@
 	</select>
 	<!-- 根据条件查询 -->
 	<select id="getSelectResult" resultType="Info">
-		SELECT softwareName,APKName,softwareSize,dic2.valueName AS flatformName,
+		SELECT app_info.id,softwareName,APKName,softwareSize,dic2.valueName AS flatformName,
 		app1.categoryName as categoryLevel1Name,app2.categoryName as categoryLevel2Name,
 		app3.categoryName as categoryLevel3Name,dic1.valueName AS statusName,downloads,versionNo,
 		app_info.id,versionId,status

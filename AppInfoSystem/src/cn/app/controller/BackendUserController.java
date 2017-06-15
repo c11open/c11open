@@ -140,9 +140,15 @@ public class BackendUserController {
 		return "/backend/appcheck";
 	}
 	@RequestMapping(value="/app/checksave.html")
-	public String appCheck(){
+	public String appCheck(@RequestParam String status,@RequestParam String id,HttpServletRequest request){
+		//App审核通过、未通过审核
+		int objstatus=infoService.findUpdataStatus(Integer.parseInt(status), Integer.parseInt(id));
+		if(objstatus==1){
+			return "redirect:/app/list.html";
+		}else{
+			return "/backend/appcheck";
+		}
 		
-		return "redirect:/app/list.html";
 	}
 }
 
