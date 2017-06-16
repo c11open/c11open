@@ -14,9 +14,8 @@
           <div class="clearfix"></div>
       </div>
       <div class="x_content1">
-        <form class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/app/checksave.html" method="post">
+        <form class="form-horizontal form-label-left" action="checksave" method="post">
           <input type="hidden" name="id" value="${appInfo.id}">
-          
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">软件名称 <span class="required">*</span>
             </label>
@@ -73,6 +72,7 @@
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input type="text" class="form-control col-md-7 col-xs-12" 
               	value="${appInfo.flatformName}" readonly="readonly">
+            
             </div>
           </div>
           <div class="item form-group">

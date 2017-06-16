@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Version {
 
-	private Integer id;	
-	private Integer appId;
+	private int id;	
+	private int appId;
 	private String versionNo;
 	private String versionInfo;
-	private Integer publishStatus;
+	private int publishStatus;
 	private String downloadLink;
-	private Double versionSize;
-	private Integer createdBy;
+	private double versionSize;
+	private int createdBy;
 	private Date creationDate;
-	private Integer modifyBy;
+	private int modifyBy;
 	private Date modifyDate;
 	private String apkLocPath;
 	private String apkFileName;
@@ -21,17 +21,35 @@ public class Version {
 	private String appName;
 	private String publishStatusName;
 	
-	public String getAppName() {
-		return appName;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setAppName(String appName) {
-		this.appName = appName;
+	public void setAppId(int appId) {
+		this.appId = appId;
+	}
+	public void setPublishStatus(int publishStatus) {
+		this.publishStatus = publishStatus;
+	}
+	public void setVersionSize(double versionSize) {
+		this.versionSize = versionSize;
+	}
+	public void setCreatedBy(int createdBy) {
+		this.createdBy = createdBy;
+	}
+	public void setModifyBy(int modifyBy) {
+		this.modifyBy = modifyBy;
 	}
 	public String getPublishStatusName() {
 		return publishStatusName;
 	}
 	public void setPublishStatusName(String publishStatusName) {
 		this.publishStatusName = publishStatusName;
+	}
+	public String getAppName() {
+		return appName;
+	}
+	public void setAppName(String appName) {
+		this.appName = appName;
 	}
 	public Integer getId() {
 		return id;

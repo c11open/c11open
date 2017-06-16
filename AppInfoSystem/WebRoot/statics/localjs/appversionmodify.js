@@ -1,3 +1,4 @@
+var path = $("#path").val();
 function delfile(id){
 	$.ajax({
 		type:"GET",//请求类型
@@ -21,7 +22,7 @@ function delfile(id){
 
 $(function(){  
 	$("#back").on("click",function(){
-		window.location.href = "list";
+		window.location.href = path+"/dev/list.html";
 	});
 	
 	//上传APK文件---------------------

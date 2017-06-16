@@ -1,15 +1,18 @@
 package cn.app.dao;
 
-import java.util.List;
-import java.util.Map;
-
 import org.apache.ibatis.annotations.Param;
 
 import cn.app.pojo.Info;
 
 public interface InfoMapper {
-	//App审核
-	public List<Info> getSelectAppCheck(@Param("aid") int aid,@Param("vid") int vid);
-	//App审核通过、未通过审核
-	public int getUpdataStatus(@Param("status") int status,@Param("id") int id);
+		
+	public int getCountInfo(@Param("APKName") String APKName);
+	
+	public int addInfo(Info info);
+	
+	public int UpdateInfoVersionIDById(@Param("id") int id,@Param("versionId")int versionId);
+	
+	public int UpdateInfoStatusById(@Param("id")int id,@Param("status")int status);
+	
+	public int getAppBasicInfo(Info info);
 }

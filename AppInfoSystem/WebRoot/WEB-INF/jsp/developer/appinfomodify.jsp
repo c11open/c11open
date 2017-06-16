@@ -10,8 +10,9 @@
              <div class="clearfix"></div>
       </div>
       <div class="x_content">
-        <form class="form-horizontal form-label-left" action="appinfomodifysave" method="post" enctype="multipart/form-data">
+        <form class="form-horizontal form-label-left" action="${pageContext.request.contextPath}/dev/appinfomodifysave.html" method="post" enctype="multipart/form-data">
           <input type="hidden" name="id" id="id" value="${appInfo.id}">
+          <input type="hidden" id="path" value="${pageContext.request.contextPath}" />
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">软件名称 <span class="required">*</span>
             </label>
@@ -72,7 +73,8 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12"  for="select">所属平台 <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <input type="hidden" value="${appInfo.flatformId}" id="fid" />
-              <select name="flatformId" id="flatformId" class="form-control" required="required"></select>
+              <select name="flatformId" id="flatformId" class="form-control" required="required">
+              </select>
             </div>
           </div>
           

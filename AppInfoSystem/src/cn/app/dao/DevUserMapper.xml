@@ -2,10 +2,106 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.app.dao.DevUserMapper">
 	<select id="getdevCodeAnddevPwd" resultType="DevUser">
-		SELECT COUNT(1) FROM dev_user 
+		SELECT devCode,devName,devPassword,devEmail,devInfo FROM dev_user 
 		<where>
 			<if test="devCode!=null and devCode!=''"> and devCode=#{devCode}</if>
 			<if test="devPassword!=null and devPassword!=''"> and devPassword=#{devPassword}</if>
 		</where>
+	</select>
+	<!-- App维护 查询列表 -->
+	<select id="getInfos" resultType="Info" parameterType="map">
+		SELECT app_info.id AS id,softwareName,APKName,softwareSize,dict1.valueName AS flatformName,app1.categoryName AS categoryLevel1Name,app2.categoryName AS categoryLevel2Name,app3.categoryName AS categoryLevel3Name,dict2.valueName AS statusName,downloads,versionNo,STATUS,versionId
+		FROM app_info
+		INNER JOIN data_dictionary AS dict1  ON dict1.valueId = app_info.flatformId AND dict1.typeCode='APP_FLATFORM'
+		INNER JOIN data_dictionary AS dict2 ON 	dict2.valueId  = app_info.status AND dict2.typeCode='APP_STATUS'
+		INNER JOIN app_category AS app1 ON app_info.categoryLevel1 = app1.id
+		INNER JOIN app_category AS app2 ON app_info.categoryLevel2 = app2.id
+		INNER JOIN app_category AS app3 ON app_info.categoryLevel3 = app3.id
+		LEFT  JOIN app_version ON app_version.id = app_info.versionId
+		<where>
+			<if test="Info.softwareName!=null and Info.softwareName!=''">
+				and softwareName like concat('%',#{Info.softwareName},'%')
+			</if>
+			<if test="Info.status!=0">
+				and status = #{Info.status}
+			</if> 
+			<if test="Info.flatformId!=0">
+				and flatformId = #{Info.flatformId}
+			</if>
+			<if test="Info.categoryLevel1!=0">
+				and categoryLevel1 =#{Info.categoryLevel1}
+			</if>
+			<if test="Info.categoryLevel2!=0">
+				and categoryLevel2 =  #{Info.categoryLevel2}
+			</if>
+			<if test="Info.categoryLevel3!=0">
+				and categoryLevel3 = #{Info.categoryLevel3}
+			</if> 
+		</where>
+			limit #{pageindex},#{pagesize};
+	</select>	
+	<select id="getValueName" resultType="Dictionary" >
+	SELECT valueId,valueName FROM data_dictionary WHERE typeName='App状态'
+	</select>
+	<select id="getValueNameBy" resultType="Dictionary">
+	SELECT valueId,valueName FROM data_dictionary WHERE typeName='所属平台'
+	</select>
+	
+	<select id="getCategoryName" resultType="Category">
+	SELECT id,categoryName,parentId FROM app_category
+	<where>
+	<choose>
+	<when test="parentId==0">
+	and parentId is null
+	</when>
+	<otherwise>
+	and parentId =#{parentId}
+	</otherwise>
+	</choose>
+	</where>
+	</select>
+	<select  id="getInfoCount" resultType="int" parameterType="Info">
+	SELECT COUNT(1) FROM app_info
+		<where>
+			<if test="softwareName!=null and softwareName!=''">
+				and softwareName like concat('%',#{softwareName},'%')
+			</if>
+			<if test="status!=0">
+				and status = #{status}
+			</if> 
+			<if test="flatformId!=0">
+				and flatformId = #{flatformId}
+			</if>
+			<if test="categoryLevel1!=0">
+				and categoryLevel1 =#{categoryLevel1}
+			</if>
+			<if test="categoryLevel2!=0">
+				and categoryLevel2 =  #{categoryLevel2}
+			</if>
+			<if test="categoryLevel3!=0">
+				and categoryLevel3 = #{categoryLevel3}
+			</if> 
+		</where>
+	</select>
+	<select id="getInfoById" resultType="Info" parameterType="int">
+	
+SELECT app_info.id AS id,softwareName,supportROM,APKName,softwareSize,dict1.valueName AS flatformName,app1.categoryName AS categoryLevel1Name,
+		app2.categoryName AS categoryLevel2Name,app3.categoryName AS categoryLevel3Name,dict2.valueName AS statusName,downloads,
+		interfaceLanguage,appInfo,logoPicPath,categoryLevel1,categoryLevel2,categoryLevel3,flatformId
+		FROM app_info
+		INNER JOIN data_dictionary AS dict1  ON dict1.valueId = app_info.flatformId AND dict1.typeCode='APP_FLATFORM'
+		INNER JOIN data_dictionary AS dict2 ON 	dict2.valueId  = app_info.status AND dict2.typeCode='APP_STATUS'
+		INNER JOIN data_dictionary AS dict3 ON 	dict3.valueId  = app_info.status AND dict3.typeCode='PUBLISH_STATUS'
+		INNER JOIN app_category AS app1 ON app_info.categoryLevel1 = app1.id
+		INNER JOIN app_category AS app2 ON app_info.categoryLevel2 = app2.id
+		INNER JOIN app_category AS app3 ON app_info.categoryLevel3 = app3.id
+		WHERE app_info.id=#{id}
+	</select>
+	
+	<select id="getVersionById" resultType="Version" parameterType="int">
+	SELECT app_version.id,app_info.softwareName AS appName,versionNo,data_dictionary.valueName AS publishStatusName,versionSize,versionInfo,downloadLink,app_version.modifyDate FROM app_version
+	INNER JOIN app_info ON app_info.id=app_version.appId
+	INNER JOIN data_dictionary ON data_dictionary.valueId = app_version.publishStatus
+	WHERE data_dictionary.typeCode = 'PUBLISH_STATUS' AND  appId=#{appId}
 	</select>
 </mapper>

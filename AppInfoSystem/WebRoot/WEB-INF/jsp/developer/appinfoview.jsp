@@ -107,7 +107,7 @@
 				    	暂无
 				  </c:when> 
 				  <c:otherwise>   
-				    <img src="${appInfo.logoPicPath }?m=1" width="100px;"/> 
+				    <img src="${appInfo.logoPicPath }" width="100px;"/> 
 				  </c:otherwise> 
               </c:choose> 
             </div>
@@ -186,6 +186,7 @@
      <div class="form-group">
         <div class="col-md-6 col-md-offset-3">
           <button type="button" class="btn btn-primary" id="back">返回</button>
+          <input type="hidden" id="path" value="${pageContext.request.contextPath}" />
         </div>
       </div>
     <div class="clearfix"></div>
